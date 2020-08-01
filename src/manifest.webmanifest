@@ -1,6 +1,6 @@
 {
-  "name": "ng-notes",
-  "short_name": "ng-notes",
+  "name": "findme",
+  "short_name": "findme",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
