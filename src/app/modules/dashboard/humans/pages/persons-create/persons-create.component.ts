@@ -119,7 +119,7 @@ export class PersonsCreateComponent implements OnInit, OnDestroy {
           .addItem(this.data, 'items')
           .toPromise()
           .then((next) => {
-            this.faceApi.createPerson(3, newPersonData).subscribe((result) => {
+            this.faceApi.createPerson('maingroup', newPersonData).subscribe((result) => {
               this.isLoadingResults = false;
               this.snackbarService.show(
                 'Person Created successfully',

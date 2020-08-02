@@ -48,11 +48,11 @@ export class TestFaceIdentificationComponent implements OnInit {
     );
     this.faceApi.detect(this.b64toFile(this.images[0])).subscribe(
       (res) => {
-        this.faceApi.identify(3, [res[0]['faceId']]).subscribe((result) => {
+        this.faceApi.identify('maingroup', [res[0]['faceId']]).subscribe((result) => {
           if (result[0]['candidates'][0]) {
             this.isLoadingResults = false;
             this.faceApi
-              .getPerson(3, result[0]['candidates'][0]['personId'])
+              .getPerson('maingroup', result[0]['candidates'][0]['personId'])
               .subscribe((data) => {
                 this.toastr.success(
                   ' ',

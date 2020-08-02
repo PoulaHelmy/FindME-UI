@@ -117,7 +117,7 @@ export class UpdatePersonComponent implements OnInit {
     this.dialogService.confirmed().subscribe((confirmed) => {
       if (confirmed) {
         this.isLoadingResults = true;
-        this.faceApi.getPersonsByGroup(3).subscribe((res) => {
+        this.faceApi.getPersonsByGroup('maingroup').subscribe((res) => {
           res.forEach((person) => {
             if (person['name'] === this.data['name']) {
               personId = person['personId'];
@@ -129,7 +129,7 @@ export class UpdatePersonComponent implements OnInit {
           .toPromise()
           .then((next) => {
             this.faceApi
-              .updatePerson(3, personId, newPersonData)
+              .updatePerson('maingroup', personId, newPersonData)
               .subscribe((result) => {
                 this.isLoadingResults = false;
                 this.snackbarService.show(

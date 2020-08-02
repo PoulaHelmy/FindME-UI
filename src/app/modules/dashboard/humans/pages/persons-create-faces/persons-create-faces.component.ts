@@ -50,7 +50,7 @@ export class PersonsCreateFacesComponent implements OnInit {
     };
     for (let i = 0; i < this.images.length; i++) {
       this.faceApi
-        .addPersonFace(3, this.selectedPersonId, this.b64toFile(this.images[i]))
+        .addPersonFace('maingroup', this.selectedPersonId, this.b64toFile(this.images[i]))
         .subscribe(
           (res) => {
             console.log('.addPersonFace', res);
