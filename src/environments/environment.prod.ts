@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiRoot: 'https://findme2030.herokuapp.com/api',
+  apiRoot: 'http://127.0.0.1:8000/api',
   algolia: {
     appId: 'VNP1XYFNSF',
     apiKey: '43313045a7a3e98b65b0cb53cdc3cfcc',
@@ -29,7 +29,7 @@ export const environment = {
     measurementId: 'G-RPGCK49QK1',
   },
   azure: {
-    endpoint: 'https://findme.cognitiveservices.azure.com/face/v1.0',
+    endpoint: 'https://eastus.api.cognitive.microsoft.com/face/v1.0',
   },
 
   remoteConfig: false, // for performance don't load settings from remote
