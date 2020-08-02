@@ -67,7 +67,7 @@ export class PersonsCreateFacesComponent implements OnInit {
         );
       this.faceApi
         .addFaceFromLocal(
-          'testfacelistcreate2020',
+          'mainlist',
           this.b64toFile(this.images[i])
         )
         .subscribe(
