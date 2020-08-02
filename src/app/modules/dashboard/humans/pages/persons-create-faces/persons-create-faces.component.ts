@@ -72,8 +72,8 @@ export class PersonsCreateFacesComponent implements OnInit {
         )
         .subscribe(
           (res) => {
-            console.log('.addFaceFromLocal', res);
-            console.log('.addFaceFromLocal  i : ', i);
+            // console.log('.addFaceFromLocal', res);
+            // console.log('.addFaceFromLocal  i : ', i);
           },
           (err) => {
             this.toastr.error(
