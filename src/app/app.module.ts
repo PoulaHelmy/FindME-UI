@@ -15,29 +15,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-
-// import { AngularFireModule } from '@angular/fire';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
-// import { environment } from '@@env/environment';
-// import { AngularLaravelEchoModule } from 'angular-laravel-echo-fix/dist';
-// import { EchoConfig } from 'angular-laravel-echo-fix/dist/src/services/lib.service';
-// export const echoConfig: EchoConfig = {
-//   userModel: 'User',
-//   notificationNamespace: 'App\\Notifications',
-//   options: {
-//     broadcaster: 'socket.io',
-//     // key: '6a3a36d495e3fbe1deaf8bf4752ea436',
-//     // wsHost: 'http://findme.test',
-//     // authEndpoint: 'http://findme.test/broadcasting/auth',
-//     // host: 'http://findme.test',
-//     // wsPort: 6001,
-//     // disableStats: true,
-//     // namespace: '',
-//   },
-// };
-import * as Sentry from '@sentry/browser';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+import * as Sentry from '@sentry/browser';
 Sentry.init({
   dsn:
     'https://91b33a09e41940fab96d42fda6a1f6b0@o347090.ingest.sentry.io/5260242',
@@ -122,10 +104,8 @@ export class SentryErrorHandler implements ErrorHandler {
     DashboardModule,
     CarouselModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    // AngularFirestoreModule,
-    // AngularLaravelEchoModule.forRoot(echoConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
